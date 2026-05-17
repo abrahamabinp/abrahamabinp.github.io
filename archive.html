@@ -1,0 +1,115 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+
+<div class="archive-page">
+  <h1 class="page-heading">The Scrolls of Yesteryear</h1>
+  
+  <div class="archive-content">
+    {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for year in postsByYear %}
+      <div class="archive-year">
+        <h2 class="year-heading">{{ year.name }}</h2>
+        
+        {% assign postsByMonth = year.items | group_by_exp: "post", "post.date | date: '%B'" %}
+        {% for month in postsByMonth %}
+          <div class="archive-month">
+            <h3 class="month-heading">{{ month.name }}</h3>
+            
+            <ul class="post-list">
+              {% for post in month.items %}
+                <li class="archive-item">
+                  <span class="post-date">{{ post.date | date: "%d" }}</span>
+                  <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+                  {% if post.categories %}
+                    <span class="post-categories-small">
+                      {% for category in post.categories %}
+                        <span class="category-small">{{ category }}</span>
+                      {% endfor %}
+                    </span>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.archive-page {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.year-heading {
+  color: #1e3a5f;
+  border-bottom: 2px solid #40e0d0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.month-heading {
+  color: #2c5282;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.archive-item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.archive-item:hover {
+  background-color: #f8fafc;
+}
+
+.post-date {
+  color: #737373;
+  font-size: 0.875rem;
+  min-width: 30px;
+  margin-right: 1rem;
+}
+
+.post-link {
+  flex: 1;
+  color: #1e3a5f;
+  font-weight: 500;
+}
+
+.post-link:hover {
+  color: #20b2aa;
+  text-decoration: none;
+}
+
+.post-categories-small {
+  margin-left: 1rem;
+}
+
+.category-small {
+  background-color: #40e0d0;
+  color: white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+</style>

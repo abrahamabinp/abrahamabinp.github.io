@@ -1,0 +1,209 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
+<article class="post about-page">
+  <header class="post-header">
+    <h1 class="post-title">Behind the words of the Wanderer</h1>
+  </header>
+
+  <div class="post-content">
+    <p class="intro-text">
+      Welcome to my management research blog! This platform serves as a digital repository for insights and discoveries from my journey as a management student and researcher. I created this space to share valuable knowledge with fellow enthusiasts and practitioners while making complex management concepts accessible to everyone.
+    </p>
+
+    <section class="about-section">
+      <h2>My Focus Areas</h2>
+      
+      <p>My research interests span several key areas of management:</p>
+      
+      <div class="focus-areas">
+
+        <div class="focus-item">
+          <h3>Entrepreneurship & Interpreneurship</h3>
+          <p>Understanding how new business are formed as a new company or within existing company, and how it maps the journey from seed-to-scale with focus on the lean startup approach</p>
+        </div>
+
+        <div class="focus-item">
+          <h3>Corporate Finance</h3>
+          <p>Understanding how companies make financial decisions, from capital structure to investment strategies and risk management in real-world business scenarios.</p>
+        </div>
+        
+        <div class="focus-item">
+          <h3>Business Analytics</h3>
+          <p>Leveraging data to drive better decision-making and transform traditional management practices through practical applications of analytics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>Why This Blog?</h2>
+      
+      <p>As a management student, I believe in the power of sharing knowledge. This blog serves multiple purposes: creating a structured repository of research findings, deepening my understanding through writing, connecting with fellow researchers and practitioners, and bridging the gap between academic theory and practical application.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>My Approach</h2>
+      
+      <p>I strive to make complex management concepts accessible without sacrificing depth. Each post aims to present validated research in an engaging format, provide practical applications of theoretical concepts, encourage critical thinking and discussion, and share resources for further exploration.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Connect With Me</h2>
+      
+      <p>I welcome discussions, collaborations, and feedback from readers. Whether you are a fellow student, an experienced practitioner, or simply curious about management topics, I would love to hear from you. Feel free to reach out through comments on posts, email for collaborations, or social media for quick insights and updates.</p>
+      
+      <div class="contact-links">
+        {% if site.author.email %}
+        <a href="mailto:{{ site.author.email }}" class="contact-btn">
+          <span>✉</span> Email Me
+        </a>
+        {% endif %}
+        
+        <!-- {% if site.linkedin_username %}
+        <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          <span>💼</span> LinkedIn
+        </a>
+        {% endif %} -->
+        
+        <!-- {% if site.github_username %}
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          <span>📚</span> GitHub
+        </a>
+        {% endif %} -->
+      </div>
+    </section>
+  </div>
+</article>
+
+<style>
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+ 
+.post-content {
+  max-width: 900px;
+  margin: 0 auto;
+} 
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #2c2416;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.intro-text::first-letter {
+  float: left;
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  margin: 0.1em 0.1em 0 0;
+  color: #8b6914;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.focus-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.focus-item {
+  background: rgba(218, 165, 32, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 105, 20, 0.2);
+  transition: all 0.3s ease;
+}
+
+.focus-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  background: rgba(218, 165, 32, 0.08);
+}
+
+.focus-item h3 {
+  color: #1a3a26;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  font-family: 'Cinzel', serif;
+}
+
+.focus-item h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #8b6914 0%, #daa520 100%);
+  margin-top: 0.5rem;
+}
+
+.focus-item p {
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #2d4a37 0%, #1a3a26 100%);
+  color: #f4e4bc;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #8b6914 0%, #daa520 100%);
+  color: #fefdfb;
+}
+
+.contact-btn span {
+  font-size: 1.2rem;
+}
+
+/* Responsive design for about page */
+@media screen and (max-width: 600px) {
+  .focus-areas {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .contact-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .contact-btn {
+    text-align: center;
+  }
+}
+</style>

@@ -1,0 +1,38 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>{{ site.description | escape }}</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="{{ "/" | relative_url }}">Home</a></li>
+          <li><a href="{{ "/about" | relative_url }}">About</a></li>
+          <li><a href="{{ "/archive" | relative_url }}">Archive</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <ul style="list-style: none; padding: 0;">
+          <!-- {% if site.github_username %}
+          <li><a href="https://github.com/{{ site.github_username }}" target="_blank">GitHub</a></li>
+          {% endif %} -->
+          <!-- {% if site.linkedin_username %}
+          <li><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">LinkedIn</a></li>
+          {% endif %} -->
+          {% if site.author.email %}
+          <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}.</p>
+    </div>
+  </div>
+</footer>

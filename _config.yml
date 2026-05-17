@@ -1,0 +1,62 @@
+# Site settings
+title: "Wisdom from the Golden Halls of Management"
+tagline: Insights on Entrepreneurship, Interpreneurship, Corporate Finance and Business Analyics
+description: > 
+  A blog dedicated to sharing my learnings and research insights
+  in entrepreneurship, interpreneurship, corporate finance and business analytics.
+baseurl: ""
+url: ""
+github_username: ""
+linkedin_username: ""
+
+# Author settings
+author:
+  name: Abin Abraham
+  email: contact@abinabraham.com
+  bio: Management student and continuous learner, passionate about all things Technology. Exploring entrepreneurship, interpreneurship, corporate finance and business analytics.
+  avatar: /images/profile.jpg
+  social_links:
+    linkedin: ""
+    github: ""
+
+# Build settings
+markdown: kramdown
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Excerpt settings
+excerpt_separator: <!--more-->
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Empty plugins array to ensure no feed plugin is loaded
+plugins: []  

@@ -1,0 +1,24 @@
+<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+  {{ page.date | date: "%B %-d, %Y" }}
+</time>
+{% if page.modified_date %}
+  • Updated: 
+  <time class="dt-modified" datetime="{{ page.modified_date | date_to_xmlschema }}" itemprop="dateModified">
+    {{ page.modified_date | date: "%B %-d, %Y" }}
+  </time>
+{% endif %}
+{% if page.author %}
+  • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
+  </span>
+{% else %}
+  • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span class="p-author h-card" itemprop="name">{{ site.author.name }}</span>
+  </span>
+{% endif %}
+{% if page.categories %}
+  • 
+  {% for category in page.categories %}
+    <span class="post-category">{{ category }}</span>
+  {% endfor %}
+{% endif %}
